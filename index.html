@@ -1,70 +1,85 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html lang="en" dir="ltr">
-  <head>
-    <meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
-    <title> Danny Harris</title>
-    <style type="text/css" media="screen"><!--
-    body
-        {
-        color: black;
-        background-color: white;
-        margin: 0px
-        }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Harris - Developer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="window">
+        <div class="window-header">
+            <div class="window-buttons">
+                <div class="window-button close"></div>
+                <div class="window-button minimize"></div>
+                <div class="window-button maximize"></div>
+            </div>
+        </div>
+        <div class="editor">
+            <div id="welcomeScreen">
+                <div class="center-screen">
+                    <img src="logo.png" alt="dannyharris.eu" width="150" height="150">
+                </div>
+                <div class="line">
+                    <div class="line-number">1</div>
+                    <div class="line-content comment"></div>
+                </div>
+                <div class="line">
+                    <div class="line-number">2</div>
+                    <div class="line-content comment"></div>
+                </div>
+                <div class="line">
+                    <div class="line-number">3</div>
+                    <div class="line-content comment"></div>
+                </div>
+                <div class="line">
+                    <div class="line-number">4</div>
+                    <div class="line-content comment"></div>
+                </div>
+                <div class="line">
+                    <div class="line-number">5</div>
+                    <div class="line-content">
+                        <span class="code"></span>
+                    </div>
+                </div>
+                <div class="definition-bubble" id="definitionBubble">
+                    Jump to definition
+                </div>
+                <div class="button-container">
+                    <button class="button" id="continueButton" style="display: none;">Continue</button>
+                </div>
+            </div>
 
-        .center-screen {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-          min-height: 100vh;
-        }
+            <div id="definitionScreen">
+                <button class="back-button">
+                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M15 18L9 12L15 6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Back
+                </button>
+                <div id="codeContent"></div>
+                <div class="button-container">
+                    <button class="button" id="viewProjectsButton" style="display: none;">View Projects</button>
+                </div>
+            </div>
 
-        .button {
-          display: inline-block;
-          padding: 15px 25px;
-          cursor: pointer;
-          text-align: center;
-          text-decoration: none;
-          outline: none;
-          color: #fff;
-          background-color: #A682BA;
-          border: none;
-          border-radius: 15px;
-          font-family: Roboto, sans-serif;
-          font-size: 18px;
-          font-style: normal;
-          font-variant: normal;
-          font-weight: bold;
-          line-height: 26.399999618530273px;
-        }
-
-        .button:active {
-          background-color: #633780;
-          transform: translateY(4px);
-        }
-
-        h1 {
-          font-family: Roboto, sans-serif;
-          font-size: 24px;
-          font-style: normal;
-          font-variant: normal;
-          font-weight: lighter;
-          line-height: 26.399999618530273px;
-        }
-    --></style>
-  </head>
-  <body>
-    <div class="center-screen">
-      <div>
-        <img src="logo.png" alt="dannyharris.eu" width="150" height="150">
-      </div>
-      <div>
-        <h1>Ongoing maintenance<h1/>
-      </div>
-      <br/>
-        <button class="button" onclick="location.href='mailto:danielcarrilloharris@gmail.com';">Contact Me</button>
-        <a rel="me" href="https://mastodon.online/@dannyharris">Mastodon</a>
+            <div id="projectsScreen">
+                <button class="back-button">
+                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M15 18L9 12L15 6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Back
+                </button>
+                <div id="projectContent">
+                    <div class="project-navigation">
+                        <button class="nav-button" id="prevProject">←</button>
+                        <div id="currentProject"></div>
+                        <button class="nav-button" id="nextProject">→</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </body>
-</html>>
+    <script src="script.js"></script>
+</body>
+</html>
